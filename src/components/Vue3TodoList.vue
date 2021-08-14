@@ -24,22 +24,37 @@
 <script>
 import { ref, reactive, computed } from "vue";
 import TodoItem from "./ToDoItem.vue";
+import { useStore } from "vuex";
+
 export default {
   setup() {
     /* DefaultData */
+    const store = useStore();
+
     const todoItems = reactive([]);
+    const todoState = computed(() => {
+      return store.state.todo;
+    });
 
     /* Add ToDo */
     const inputTitle = ref("");
     const inputValue = ref("");
     const handleClick = () => {
       const id = todoItems.length + 1;
-      todoItems.push({
+      const newTodo = {
         id,
         done: false,
         title: inputTitle.value,
         value: inputValue.value,
-      });
+      };
+      todoItems.push(newTodo);
+      store.commit("addTodo", newTodo);
+    };
+
+    /* Toggle Method */
+    const toggle = () => {
+      todo.done = !todo.done;
+      store.commit("setDone", todo.done);
     };
 
     /* Filter作業 */
@@ -56,6 +71,8 @@ export default {
       handleClick,
       filterValue,
       filteredTodoItems,
+      todoState,
+      toggle,
     };
   },
   components: {
