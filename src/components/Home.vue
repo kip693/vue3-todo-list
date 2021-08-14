@@ -1,13 +1,13 @@
 <template>
-  <Base>
-    <router-view />
-  </Base>
+  <Vue3ToDoList :test="test" />
+  <NewList />
+  <ModalParent />
+  <Counter />
 </template>
 
 <script>
 import ToDoList from "./ToDoList.vue";
 import NewList from "./NewList.vue";
-import Base from "./Base.vue";
 import ModalParent from "./ModalParent.vue";
 import Counter from "./Counter.vue";
 import Vue3ToDoList from "./Vue3TodoList.vue";
@@ -16,7 +16,6 @@ export default {
   components: {
     NewList,
     ToDoList,
-    Base,
     ModalParent,
     Counter,
     Vue3ToDoList,

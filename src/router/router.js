@@ -1,15 +1,15 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import test from "../components/PageCounter.vue"
-import App from "../components/App.vue"
 import PageNotFound from "../components/PageNotFound.vue"
+import Home from "../components/Home.vue"
 
 export const router =  createRouter({
   history: createWebHistory(),
   routes: [
     {
         path:"/",
-        component: App,
-        name: "App",
+        component: Home,
+        name: "Home",
     },
     {
         path:"/test",

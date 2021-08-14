@@ -16,7 +16,7 @@ import store from "./stores/sotre"
 //     routes,
 //   })
 
-const app = createApp({App})
+const app = createApp(App)
 app.use(store)
 app.use(router)
 app.mount('#app')

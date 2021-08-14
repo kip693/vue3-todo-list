@@ -7,7 +7,7 @@
 <script>
 import Base from "./Base.vue";
 import Counter from "./Counter.vue";
-console.log("This is Counter");
+
 export default {
   name: "Test",
   components: {

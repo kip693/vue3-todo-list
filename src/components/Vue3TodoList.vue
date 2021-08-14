@@ -48,7 +48,7 @@ export default {
       if (!filterValue.value) {
         return todoItems;
       }
-      return todoItems.filter((todo) => todo.text.includes(filterValue.value));
+      return todoItems.filter((todo) => todo.title.includes(filterValue.value));
     });
     return {
       inputTitle,
