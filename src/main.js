@@ -3,6 +3,8 @@ import App from './components/App.vue'
 import './index.css'
 import router from "./router/router"
 import store from "./stores/sotre"
+import ElementPlus from 'element-plus';
+import 'element-plus/lib/theme-chalk/index.css';
 
 
 // const routes = [
@@ -17,6 +19,7 @@ import store from "./stores/sotre"
 //   })
 
 const app = createApp(App)
+app.use(ElementPlus)
 app.use(store)
 app.use(router)
 app.mount('#app')

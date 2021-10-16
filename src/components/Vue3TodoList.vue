@@ -21,7 +21,7 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
 import { ref, reactive, computed } from "vue";
 import TodoItem from "./ToDoItem.vue";
 import { useStore } from "vuex";
@@ -49,12 +49,6 @@ export default {
       };
       todoItems.push(newTodo);
       store.commit("addTodo", newTodo);
-    };
-
-    /* Toggle Method */
-    const toggle = () => {
-      todo.done = !todo.done;
-      store.commit("setDone", todo.done);
     };
 
     /* Filter作業 */

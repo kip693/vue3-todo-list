@@ -1,8 +1,6 @@
 <template>
   <Vue3ToDoList :test="test" />
   <NewList />
-  <ModalParent />
-  <Counter />
 </template>
 
 <script>
