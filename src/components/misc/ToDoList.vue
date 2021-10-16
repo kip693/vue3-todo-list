@@ -22,7 +22,7 @@
 </template>
 
 <script>
-import todoItem from "./ToDoItem.vue";
+import todoItem from "../ToDoItem.vue";
 export default {
   components: {
     todoItem,

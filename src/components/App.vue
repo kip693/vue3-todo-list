@@ -5,11 +5,11 @@
 </template>
 
 <script>
-import ToDoList from "./ToDoList.vue";
-import NewList from "./NewList.vue";
+import ToDoList from "./misc/ToDoList.vue";
+import NewList from "./misc/NewList.vue";
 import Base from "./Base.vue";
-import ModalParent from "./ModalParent.vue";
-import Counter from "./Counter.vue";
+import ModalParent from "./misc/ModalParent.vue";
+import Counter from "./misc/Counter.vue";
 import Vue3ToDoList from "./Vue3TodoList.vue";
 export default {
   name: "App",

@@ -6,7 +6,7 @@
 
 <script>
 import Base from "./Base.vue";
-import Counter from "./Counter.vue";
+import Counter from "./misc/Counter.vue";
 
 export default {
   name: "Test",

@@ -1,34 +1,35 @@
 <template>
-  <div @click="toggle" :class="{ done: todo.done }" class="todo-item">
+  <div :class="{ done: props.todo.done }" class="todo-item">
     <div>
       <transition name="fade">
-        <span v-if="todo.done">✅</span>
+        <span v-if="props.todo.done" class="check">✅</span>
       </transition>
-      <span class="todo-title">{{ todo.title }}</span>
+      <a :href="props.todo.link" target="_blank" class="todo-title">
+        {{ props.todo.title }}
+      </a>
     </div>
     <div class="todo-value">
-      {{ todo.value }}
+      <span class="category">{{ props.todo.category }}</span>
+      {{ props.todo.value }}
     </div>
+    <el-button @click="toggle">Check</el-button>
+    <el-button @click="deleteTodo">Delete</el-button>
   </div>
 </template>
 
-<script lang="ts">
-import { defineComponent } from "vue";
-
-export default defineComponent({
-  props: {
-    todo: {
-      type: Object,
-      required: true,
-    },
-  },
-  emits: ["toggle", "clicked"],
-  methods: {
-    toggle() {
-      this.$emit("toggle");
-    },
-  },
-});
+<script setup lang="ts">
+import { defineEmits, defineProps } from "vue";
+import { ElButton } from "element-plus";
+const props = defineProps<{
+  todo: any;
+}>();
+const emit = defineEmits(["toggle", "deleteTodo"]);
+const toggle = () => {
+  emit("toggle", props.todo.id);
+};
+const deleteTodo = () => {
+  emit("deleteTodo", props.todo.id);
+};
 </script>
 
 <style scoped>
@@ -37,8 +38,12 @@ export default defineComponent({
   cursor: pointer;
 }
 
+.check {
+  margin-right: 10px;
+}
+
 .todo-item.done {
-  background-color: #3fb983;
+  background-color: #53a8ff;
   color: #fff;
 }
 

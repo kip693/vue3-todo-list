@@ -6,7 +6,9 @@ const store = createStore({
             id: "",
             title: "",
             value: "",
+            link: "",
             done: false,
+            category: ""
         },
         name: {
             title: "",
@@ -30,6 +32,7 @@ const store = createStore({
             const targetTodo = state.todoItems.filter(todo =>{
                 return todo.id === value.id
             })
+            console.log(targetTodo)
             targetTodo.done = value.done
         },
         setName(state, name) {

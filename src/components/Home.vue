@@ -1,21 +1,16 @@
 <template>
-  <Vue3ToDoList :test="test" />
-  <NewList />
+  <Vue3ToDoList />
 </template>
 
 <script>
-import ToDoList from "./ToDoList.vue";
-import NewList from "./NewList.vue";
-import ModalParent from "./ModalParent.vue";
-import Counter from "./Counter.vue";
+import ToDoList from "./misc/ToDoList.vue";
+import NewList from "./misc/NewList.vue";
+import ModalParent from "./misc/ModalParent.vue";
+import Counter from "./misc/Counter.vue";
 import Vue3ToDoList from "./Vue3TodoList.vue";
 export default {
   name: "App",
   components: {
-    NewList,
-    ToDoList,
-    ModalParent,
-    Counter,
     Vue3ToDoList,
   },
   computed: {

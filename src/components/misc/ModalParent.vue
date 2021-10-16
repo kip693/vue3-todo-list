@@ -7,7 +7,7 @@
   </ModalDialog>
 </template>
 <script>
-import ModalDialog from "./ModalDialog.vue";
+import ModalDialog from "../misc/ModalDialog.vue";
 export default {
   components: {
     ModalDialog,
