@@ -36,6 +36,7 @@ const deleteTodo = () => {
 .todo-item {
   margin: 0px 0px 15px 0px;
   cursor: pointer;
+  padding: 10px;
 }
 
 .check {
@@ -54,6 +55,7 @@ const deleteTodo = () => {
 
 .todo-value {
   font-size: 18px;
+  margin: 10px 0px;
 }
 
 .fade-enter-active,
@@ -64,5 +66,10 @@ const deleteTodo = () => {
 .fade-enter-from,
 .fade-leave-to {
   opacity: 0;
+}
+
+.category {
+  color: rgb(109, 109, 109);
+  font-size: 15px;
 }
 </style>
